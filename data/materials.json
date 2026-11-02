@@ -1,0 +1,2111 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "updated_at": "2026-11-02",
+    "record_count": 29,
+    "schema": "id / category / name_cn / grade / attrs（0-3 序数工程评分，非物理量）/ props（物理量，带证据等级）/ applications / limitations / sources / updated_at",
+    "evidence_levels": {
+      "standard": "标准明确规定，可作为合规依据",
+      "document": "厂商文件、教材、论文，需核对版本",
+      "engineering": "工程经验判断，非强制要求",
+      "assumption": "待验证假设，原型内的简化"
+    },
+    "known_gaps": [
+      "attrs 中的 0-3 分值为工程序数评分，用于同层候选排序，不可跨层比较",
+      "阻燃等级（A/B/C/D）为成品级结论，材料记录只能给出材料级氧指数，不能直接推定成品等级",
+      "未收录具体牌号 TDS（如某厂 LSZH 护套料），同类别内耐寒/耐油差异可能很大"
+    ]
+  },
+  "materials": [
+    {
+      "id": "CON-CU",
+      "category": "conductor",
+      "name_cn": "裸铜绞合导体（第2种）",
+      "name_en": "Annealed bare copper conductor, class 2",
+      "grade": "Cu-ETP / TU1，紧压圆形或扇形",
+      "abstract": "导电率最高、连接最可靠的基准方案，也是 YJV 系列低压电力电缆的默认导体。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 250,
+        "temp_low": -40,
+        "flame": 0,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 2,
+        "uv": 2,
+        "flex": 2,
+        "mech": 3,
+        "abrasion": 2,
+        "rodent": 0,
+        "water": 2,
+        "magnetic": 0,
+        "tensile": 3,
+        "shield": 0,
+        "cost": 4,
+        "cond": 3
+      },
+      "props": [
+        {
+          "k": "20℃ 直流电阻率",
+          "v": "≤0.017241",
+          "u": "Ω·mm²/m",
+          "level": "standard",
+          "ref": "STD-3956"
+        },
+        {
+          "k": "长期允许工作温度",
+          "v": "90（受 XLPE 绝缘限制）",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-12706-1"
+        },
+        {
+          "k": "短路允许温度",
+          "v": "250（≤5 s）",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-12706-1"
+        },
+        {
+          "k": "密度",
+          "v": "8.89",
+          "u": "g/cm³",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "低压与中压电力电缆导体",
+        "固定敷设",
+        "需要可靠螺栓连接的场合",
+        "桥架、穿管、直埋"
+      ],
+      "limitations": [
+        "成本随铜价波动大",
+        "重量大，大截面敷设需机械牵引",
+        "与铝连接需铜铝过渡措施"
+      ],
+      "cost_index": 4,
+      "sources": [
+        "STD-3956",
+        "STD-12706-1",
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "CON-CU-TIN",
+      "category": "conductor",
+      "name_cn": "镀锡铜绞合导体",
+      "name_en": "Tinned copper conductor, class 2/5",
+      "grade": "镀锡层厚度按 GB/T 4910，软态",
+      "abstract": "在铜表面镀锡，牺牲约 2% 导电率换取抗氧化、耐湿热与可焊性，是沿海、潮湿与橡套电缆的常用选择。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 250,
+        "temp_low": -40,
+        "flame": 0,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 2,
+        "uv": 2,
+        "flex": 3,
+        "mech": 3,
+        "abrasion": 2,
+        "rodent": 0,
+        "water": 3,
+        "magnetic": 0,
+        "tensile": 3,
+        "shield": 0,
+        "cost": 5,
+        "cond": 3
+      },
+      "props": [
+        {
+          "k": "20℃ 直流电阻率",
+          "v": "略高于裸铜（约 +2%）",
+          "u": "Ω·mm²/m",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "长期允许工作温度",
+          "v": "90",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-12706-1"
+        },
+        {
+          "k": "盐雾/湿热表现",
+          "v": "优于裸铜",
+          "u": "-",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "沿海与高湿环境",
+        "橡套软电缆",
+        "耐火电缆导体",
+        "需要焊接的接线端子"
+      ],
+      "limitations": [
+        "成本高于裸铜",
+        "镀层破损处仍可能发生局部腐蚀",
+        "高频场合集肤效应略增"
+      ],
+      "cost_index": 5,
+      "sources": [
+        "STD-3956",
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "engineering"
+    },
+    {
+      "id": "CON-AL",
+      "category": "conductor",
+      "name_cn": "铝绞合导体（第2种）",
+      "name_en": "Aluminium conductor, class 2",
+      "grade": "1350-H19 / 电工铝",
+      "abstract": "以约 1/3 的重量和显著更低的成本替代铜，代价是导电率、抗蠕变与连接可靠性下降。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 250,
+        "temp_low": -40,
+        "flame": 0,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 2,
+        "uv": 2,
+        "flex": 1,
+        "mech": 1,
+        "abrasion": 1,
+        "rodent": 0,
+        "water": 1,
+        "magnetic": 0,
+        "tensile": 2,
+        "shield": 0,
+        "cost": 1,
+        "cond": 2
+      },
+      "props": [
+        {
+          "k": "20℃ 直流电阻率",
+          "v": "≤0.028264",
+          "u": "Ω·mm²/m",
+          "level": "standard",
+          "ref": "STD-3956"
+        },
+        {
+          "k": "长期允许工作温度",
+          "v": "90（受 XLPE 绝缘限制）",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-12706-1"
+        },
+        {
+          "k": "密度",
+          "v": "2.70",
+          "u": "g/cm³",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "最小推荐截面（低压电力电缆）",
+          "v": "≥16",
+          "u": "mm²",
+          "level": "engineering",
+          "ref": "STD-50217"
+        }
+      ],
+      "applications": [
+        "大截面、低成本的固定敷设线路",
+        "架空与竖井",
+        "对重量敏感的场合"
+      ],
+      "limitations": [
+        "抗蠕变差，螺栓连接易松动，需定期复紧",
+        "与铜连接必须用铜铝过渡端子",
+        "潮湿环境易电化学腐蚀",
+        "弯曲性能差，反复弯折易断"
+      ],
+      "cost_index": 1,
+      "sources": [
+        "STD-3956",
+        "STD-50217",
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "CON-AL-ALLOY",
+      "category": "conductor",
+      "name_cn": "铝合金绞合导体",
+      "name_en": "Aluminium alloy conductor (AA-8030 / 8176)",
+      "grade": "AA-8030 或 AA-8176 系",
+      "abstract": "在铝中加入铁、铜、镁改善抗蠕变与延伸率，保留铝的重量与成本优势，连接可靠性接近铜。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 250,
+        "temp_low": -40,
+        "flame": 0,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 2,
+        "uv": 2,
+        "flex": 2,
+        "mech": 2,
+        "abrasion": 1,
+        "rodent": 0,
+        "water": 1,
+        "magnetic": 0,
+        "tensile": 2,
+        "shield": 0,
+        "cost": 2,
+        "cond": 2
+      },
+      "props": [
+        {
+          "k": "20℃ 直流电阻率",
+          "v": "约 0.0280（略优于纯铝）",
+          "u": "Ω·mm²/m",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "抗蠕变",
+          "v": "显著优于纯铝",
+          "u": "-",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "断裂伸长率",
+          "v": "≥10（纯铝约 1~2）",
+          "u": "%",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "替代铜芯的大截面电力电缆",
+        "光伏与新能源直流回路",
+        "对重量敏感的场合"
+      ],
+      "limitations": [
+        "成本高于纯铝",
+        "仍存在铜铝过渡问题",
+        "国内牌号与供货一致性需确认"
+      ],
+      "cost_index": 2,
+      "sources": [
+        "DOC-TEXTBOOK",
+        "STD-3956"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "document"
+    },
+    {
+      "id": "INS-PVC70",
+      "category": "insulation",
+      "name_cn": "聚氯乙烯绝缘（70℃）",
+      "name_en": "PVC insulation, 70℃",
+      "grade": "J-70 / 阻燃型 J-70（GB/T 8815）",
+      "abstract": "成本最低、加工最成熟的老牌绝缘，电气与耐温性能一般，燃烧时释放氯化氢与浓烟。",
+      "attrs": {
+        "temp_long": 70,
+        "temp_short": 160,
+        "temp_low": -15,
+        "flame": 1,
+        "halogen": 1,
+        "smoke": 3,
+        "oil": 2,
+        "uv": 1,
+        "flex": 2,
+        "mech": 2,
+        "abrasion": 2,
+        "rodent": 0,
+        "water": 2,
+        "magnetic": 0,
+        "tensile": 0,
+        "shield": 0,
+        "cost": 1,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "长期允许工作温度",
+          "v": "70",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-5023"
+        },
+        {
+          "k": "短路允许温度",
+          "v": "160（≤5 s）",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-12706-1"
+        },
+        {
+          "k": "氧指数（普通型）",
+          "v": "23~28",
+          "u": "%",
+          "level": "document",
+          "ref": "STD-8815"
+        },
+        {
+          "k": "低温脆化温度",
+          "v": "约 -15",
+          "u": "℃",
+          "level": "document",
+          "ref": "STD-8815"
+        },
+        {
+          "k": "燃烧产物",
+          "v": "含氯化氢，烟密度高",
+          "u": "-",
+          "level": "standard",
+          "ref": "STD-17650"
+        }
+      ],
+      "applications": [
+        "450/750V 及以下布电线（BV/BVR）",
+        "室内干燥环境固定敷设",
+        "成本敏感项目"
+      ],
+      "limitations": [
+        "含卤，火灾时腐蚀性气体与浓烟",
+        "耐温仅 70℃，载流量受限",
+        "低温易脆化，不适合 -25℃ 以下",
+        "燃烧滴落"
+      ],
+      "cost_index": 1,
+      "sources": [
+        "STD-5023",
+        "STD-8815",
+        "STD-17650"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "INS-XLPE",
+      "category": "insulation",
+      "name_cn": "交联聚乙烯绝缘",
+      "name_en": "XLPE insulation",
+      "grade": "中低压电缆用 XLPE（过氧化物或硅烷交联）",
+      "abstract": "当前 0.6/1kV 至 35kV 电力电缆的主流绝缘，耐温 90℃、介电损耗低、载流量高，但本体易燃、燃烧烟大。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 250,
+        "temp_low": -40,
+        "flame": 0,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 1,
+        "uv": 2,
+        "flex": 2,
+        "mech": 3,
+        "abrasion": 2,
+        "rodent": 0,
+        "water": 2,
+        "magnetic": 0,
+        "tensile": 0,
+        "shield": 0,
+        "cost": 2,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "长期允许工作温度",
+          "v": "90",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-12706-1"
+        },
+        {
+          "k": "短路允许温度",
+          "v": "250（≤5 s）",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-12706-1"
+        },
+        {
+          "k": "氧指数（未阻燃改性）",
+          "v": "17~19",
+          "u": "%",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "相对介电常数（50Hz）",
+          "v": "约 2.3",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "体积电阻率（20℃）",
+          "v": "≥1×10^14",
+          "u": "Ω·m",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "0.6/1kV 至 35kV 电力电缆（YJV 系列）",
+        "桥架、穿管、直埋",
+        "需要较高载流量的场合"
+      ],
+      "limitations": [
+        "易燃，需依赖阻燃护套/填充实现成束阻燃",
+        "燃烧烟密度大，不满足低烟要求",
+        "中压存在水树老化风险，潮湿环境需阻水结构",
+        "耐油性一般"
+      ],
+      "cost_index": 2,
+      "sources": [
+        "STD-12706-1",
+        "STD-12706-2",
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "INS-LSZH",
+      "category": "insulation",
+      "name_cn": "无卤低烟阻燃交联聚烯烃绝缘",
+      "name_en": "LSZH cross-linked polyolefin insulation",
+      "grade": "无卤低烟阻燃绝缘料（GB/T 32129）",
+      "abstract": "以氢氧化铝/氢氧化镁填充实现无卤阻燃，燃烧时烟少、无卤酸气体，代价是机械强度与加工窗口变差。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 250,
+        "temp_low": -25,
+        "flame": 2,
+        "halogen": 0,
+        "smoke": 0,
+        "oil": 1,
+        "uv": 1,
+        "flex": 2,
+        "mech": 2,
+        "abrasion": 1,
+        "rodent": 0,
+        "water": 2,
+        "magnetic": 0,
+        "tensile": 0,
+        "shield": 0,
+        "cost": 4,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "长期允许工作温度",
+          "v": "90",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-32129"
+        },
+        {
+          "k": "氧指数",
+          "v": "≥32",
+          "u": "%",
+          "level": "standard",
+          "ref": "STD-32129"
+        },
+        {
+          "k": "卤酸气体",
+          "v": "≤5",
+          "u": "mg/g",
+          "level": "standard",
+          "ref": "STD-17650"
+        },
+        {
+          "k": "燃烧气体 pH",
+          "v": "≥4.3",
+          "u": "-",
+          "level": "standard",
+          "ref": "STD-17650"
+        },
+        {
+          "k": "烟密度透光率",
+          "v": "≥60",
+          "u": "%",
+          "level": "standard",
+          "ref": "STD-17651"
+        },
+        {
+          "k": "常规牌号低温脆化",
+          "v": "约 -25（耐寒牌号可达 -40）",
+          "u": "℃",
+          "level": "document",
+          "ref": "STD-32129"
+        }
+      ],
+      "applications": [
+        "地铁、隧道、机房、人员密集场所",
+        "WDZ-YJY 系列",
+        "对烟毒与腐蚀性气体敏感的场所"
+      ],
+      "limitations": [
+        "高填充导致抗张强度与断裂伸长率低于 XLPE",
+        "成本显著高于 PVC/XLPE",
+        "加工窗口窄，挤出工艺要求高",
+        "常规牌号低温性能仅到 -25℃，-40℃ 需专用耐寒牌号"
+      ],
+      "cost_index": 4,
+      "sources": [
+        "STD-32129",
+        "STD-17650",
+        "STD-17651"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "INS-EPR",
+      "category": "insulation",
+      "name_cn": "乙丙橡胶绝缘",
+      "name_en": "EPR / EPDM insulation",
+      "grade": "乙丙橡胶绝缘料",
+      "abstract": "柔性好、耐热耐臭氧、耐水树，适合移动敷设与中压橡套电缆，但耐油差、成本高。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 250,
+        "temp_low": -40,
+        "flame": 0,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 0,
+        "uv": 3,
+        "flex": 3,
+        "mech": 2,
+        "abrasion": 2,
+        "rodent": 0,
+        "water": 3,
+        "magnetic": 0,
+        "tensile": 0,
+        "shield": 0,
+        "cost": 3,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "长期允许工作温度",
+          "v": "90",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-5013"
+        },
+        {
+          "k": "短路允许温度",
+          "v": "250（≤5 s）",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-5013"
+        },
+        {
+          "k": "耐臭氧与耐候",
+          "v": "优",
+          "u": "-",
+          "level": "document",
+          "ref": "STD-5013"
+        },
+        {
+          "k": "耐油",
+          "v": "差（矿物油中显著溶胀）",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "移动敷设橡套电缆",
+        "中压矿用与船用电缆",
+        "潮湿与水下场合",
+        "需要高柔性的固定敷设"
+      ],
+      "limitations": [
+        "耐矿物油差",
+        "成本高于 XLPE",
+        "阻燃需另加阻燃剂，燃烧烟大",
+        "硫化工艺控制要求高"
+      ],
+      "cost_index": 3,
+      "sources": [
+        "STD-5013",
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "INS-SIR",
+      "category": "insulation",
+      "name_cn": "硅橡胶绝缘",
+      "name_en": "Silicone rubber insulation",
+      "grade": "高温硅橡胶",
+      "abstract": "耐温可达 180℃，燃烧后生成二氧化硅灰壳仍具绝缘性，是耐火与高温场合的专用绝缘。",
+      "attrs": {
+        "temp_long": 180,
+        "temp_short": 350,
+        "temp_low": -60,
+        "flame": 1,
+        "halogen": 0,
+        "smoke": 1,
+        "oil": 0,
+        "uv": 3,
+        "flex": 3,
+        "mech": 1,
+        "abrasion": 0,
+        "rodent": 0,
+        "water": 2,
+        "magnetic": 0,
+        "tensile": 0,
+        "shield": 0,
+        "cost": 5,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "长期允许工作温度",
+          "v": "180",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-5013"
+        },
+        {
+          "k": "短期耐温",
+          "v": "可达 350",
+          "u": "℃",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "低温性能",
+          "v": "-60 仍保持柔性",
+          "u": "℃",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "燃烧残留",
+          "v": "生成 SiO₂ 灰壳",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "高温场合（冶金、玻璃、窑炉）",
+        "耐火电缆",
+        "低温与户外",
+        "需要极高柔性的接线"
+      ],
+      "limitations": [
+        "机械强度低，易被尖锐物划伤",
+        "价格高",
+        "耐油与耐溶剂差",
+        "长期浸水性能需专门验证"
+      ],
+      "cost_index": 5,
+      "sources": [
+        "STD-5013",
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "INS-MICA",
+      "category": "insulation",
+      "name_cn": "合成云母带耐火层",
+      "name_en": "Synthetic mica tape fire barrier",
+      "grade": "金云母/合成云母带，单面或双面补强",
+      "abstract": "绕包在导体外，火灾时云母脱水形成骨架维持绝缘，是耐火电缆实现线路完整性的关键结构层，本身不承担正常运行电场。",
+      "attrs": {
+        "temp_long": 950,
+        "temp_short": 1000,
+        "temp_low": -40,
+        "flame": 3,
+        "halogen": 0,
+        "smoke": 0,
+        "oil": 2,
+        "uv": 3,
+        "flex": 2,
+        "mech": 1,
+        "abrasion": 0,
+        "rodent": 0,
+        "water": 1,
+        "magnetic": 0,
+        "tensile": 0,
+        "shield": 0,
+        "cost": 3,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "耐火试验条件",
+          "v": "750℃ / 90 min 线路完整性",
+          "u": "-",
+          "level": "standard",
+          "ref": "STD-19216"
+        },
+        {
+          "k": "云母带绕包层数",
+          "v": "通常 2 层（重叠率 50%）",
+          "u": "-",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "吸潮性",
+          "v": "易吸潮，需烘干与密封包装",
+          "u": "-",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "NH-YJV / WDZN-YJY 耐火电缆",
+        "消防泵、排烟风机供电回路",
+        "应急照明干线"
+      ],
+      "limitations": [
+        "必须与主绝缘复合使用，不能单独作为绝缘",
+        "绕包工艺不良会导致耐压击穿",
+        "吸潮后绝缘电阻下降，需控制储运湿度",
+        "增加外径与成本"
+      ],
+      "cost_index": 3,
+      "sources": [
+        "STD-19216",
+        "STD-19666",
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "FIL-PP",
+      "category": "filler",
+      "name_cn": "聚丙烯网状填充绳",
+      "name_en": "PP filler yarn",
+      "grade": "PP 网状撕裂膜绳",
+      "abstract": "最常用的成缆填充，轻、便宜、不吸潮，但本身易燃且燃烧滴落。",
+      "attrs": {
+        "temp_long": 80,
+        "temp_short": 120,
+        "temp_low": -20,
+        "flame": 0,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 1,
+        "uv": 0,
+        "flex": 3,
+        "mech": 1,
+        "abrasion": 0,
+        "rodent": 0,
+        "water": 3,
+        "magnetic": 0,
+        "tensile": 1,
+        "shield": 0,
+        "cost": 1,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "氧指数",
+          "v": "约 17~18",
+          "u": "%",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "吸水率",
+          "v": "极低",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "燃烧行为",
+          "v": "易燃，熔融滴落",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "普通 YJV/VV 电缆成缆填充",
+        "干燥环境",
+        "成本敏感产品"
+      ],
+      "limitations": [
+        "易燃，不适用于阻燃 A/B 类与低烟无卤产品",
+        "燃烧滴落可能引燃下方可燃物",
+        "无阻水能力"
+      ],
+      "cost_index": 1,
+      "sources": [
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "engineering"
+    },
+    {
+      "id": "FIL-GLASS",
+      "category": "filler",
+      "name_cn": "玻璃纤维填充绳",
+      "name_en": "Fiberglass filler yarn",
+      "grade": "无碱玻纤绳",
+      "abstract": "不燃、耐高温，用于阻燃与耐火结构的填充，但吸潮、易刺破绝缘。",
+      "attrs": {
+        "temp_long": 200,
+        "temp_short": 400,
+        "temp_low": -40,
+        "flame": 3,
+        "halogen": 0,
+        "smoke": 0,
+        "oil": 1,
+        "uv": 3,
+        "flex": 1,
+        "mech": 1,
+        "abrasion": 0,
+        "rodent": 0,
+        "water": 1,
+        "magnetic": 0,
+        "tensile": 2,
+        "shield": 0,
+        "cost": 2,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "长期耐温",
+          "v": "≥200",
+          "u": "℃",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "燃烧性能",
+          "v": "不燃",
+          "u": "-",
+          "level": "standard",
+          "ref": "STD-19666"
+        },
+        {
+          "k": "吸潮性",
+          "v": "较高，需烘干",
+          "u": "-",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "阻燃 A/B 类电缆填充",
+        "耐火电缆",
+        "高温场合"
+      ],
+      "limitations": [
+        "吸潮后影响绝缘电阻",
+        "纤维硬，可能刺破绝缘",
+        "成本高于 PP 绳",
+        "加工时飞尘大"
+      ],
+      "cost_index": 2,
+      "sources": [
+        "STD-19666",
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "engineering"
+    },
+    {
+      "id": "FIL-LSZH",
+      "category": "filler",
+      "name_cn": "无卤低烟阻燃填充绳",
+      "name_en": "LSZH flame-retardant filler",
+      "grade": "无卤阻燃 PP/聚烯烃基填充绳",
+      "abstract": "在聚烯烃基体中添加无卤阻燃剂，兼顾阻燃与低烟，是无卤低烟电缆的标配填充。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 150,
+        "temp_low": -25,
+        "flame": 2,
+        "halogen": 0,
+        "smoke": 0,
+        "oil": 1,
+        "uv": 1,
+        "flex": 3,
+        "mech": 1,
+        "abrasion": 0,
+        "rodent": 0,
+        "water": 2,
+        "magnetic": 0,
+        "tensile": 1,
+        "shield": 0,
+        "cost": 3,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "氧指数",
+          "v": "≥30",
+          "u": "%",
+          "level": "document",
+          "ref": "STD-32129"
+        },
+        {
+          "k": "卤含量",
+          "v": "无卤",
+          "u": "-",
+          "level": "standard",
+          "ref": "STD-17650"
+        },
+        {
+          "k": "烟密度",
+          "v": "低",
+          "u": "-",
+          "level": "standard",
+          "ref": "STD-17651"
+        }
+      ],
+      "applications": [
+        "WDZ 系列无卤低烟电缆",
+        "地铁、隧道、机房",
+        "成束阻燃场合"
+      ],
+      "limitations": [
+        "成本高于普通 PP 绳",
+        "阻燃剂吸潮，储运需防潮",
+        "机械强度低于玻纤"
+      ],
+      "cost_index": 3,
+      "sources": [
+        "STD-32129",
+        "STD-17650"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "TAP-NONWOVEN",
+      "category": "tape",
+      "name_cn": "无纺布包带",
+      "name_en": "Non-woven wrapping tape",
+      "grade": "聚酯无纺布带",
+      "abstract": "成缆时绕包，起隔离、缓冲与定型作用，成本低但不阻燃。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 150,
+        "temp_low": -30,
+        "flame": 0,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 1,
+        "uv": 1,
+        "flex": 3,
+        "mech": 1,
+        "abrasion": 0,
+        "rodent": 0,
+        "water": 1,
+        "magnetic": 0,
+        "tensile": 1,
+        "shield": 0,
+        "cost": 1,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "厚度",
+          "v": "0.1~0.2",
+          "u": "mm",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "燃烧性能",
+          "v": "可燃",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "普通电缆成缆包带",
+        "铠装内衬层",
+        "护套前隔离"
+      ],
+      "limitations": [
+        "可燃，阻燃产品需改用阻燃包带或玻纤带",
+        "无阻水功能"
+      ],
+      "cost_index": 1,
+      "sources": [
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "engineering"
+    },
+    {
+      "id": "TAP-WATERBLOCK",
+      "category": "tape",
+      "name_cn": "阻水带（半导电/绝缘型）",
+      "name_en": "Water-blocking tape",
+      "grade": "膨胀型阻水带",
+      "abstract": "遇水膨胀形成凝胶，阻止水沿轴向渗透，是直埋、穿管与潮湿环境的关键结构。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 150,
+        "temp_low": -30,
+        "flame": 1,
+        "halogen": 0,
+        "smoke": 2,
+        "oil": 1,
+        "uv": 1,
+        "flex": 3,
+        "mech": 1,
+        "abrasion": 0,
+        "rodent": 0,
+        "water": 3,
+        "magnetic": 0,
+        "tensile": 1,
+        "shield": 0,
+        "cost": 2,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "膨胀倍率",
+          "v": "≥10",
+          "u": "倍",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "阻水性能",
+          "v": "轴向渗水试验合格",
+          "u": "-",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "直埋与穿管敷设",
+        "潮湿环境",
+        "中压电缆径向阻水结构"
+      ],
+      "limitations": [
+        "增加外径与成本",
+        "绕包搭盖率不足会失效",
+        "长期高温下膨胀剂可能失效"
+      ],
+      "cost_index": 2,
+      "sources": [
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "engineering"
+    },
+    {
+      "id": "TAP-GLASS",
+      "category": "tape",
+      "name_cn": "玻璃纤维阻燃包带",
+      "name_en": "Fiberglass flame-retardant tape",
+      "grade": "无碱玻纤带",
+      "abstract": "不燃包带，用于阻燃与耐火结构的隔离层，替代无纺布带。",
+      "attrs": {
+        "temp_long": 200,
+        "temp_short": 400,
+        "temp_low": -40,
+        "flame": 3,
+        "halogen": 0,
+        "smoke": 0,
+        "oil": 1,
+        "uv": 3,
+        "flex": 2,
+        "mech": 1,
+        "abrasion": 0,
+        "rodent": 0,
+        "water": 1,
+        "magnetic": 0,
+        "tensile": 2,
+        "shield": 0,
+        "cost": 2,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "燃烧性能",
+          "v": "不燃",
+          "u": "-",
+          "level": "standard",
+          "ref": "STD-19666"
+        },
+        {
+          "k": "长期耐温",
+          "v": "≥200",
+          "u": "℃",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "阻燃 A/B 类电缆",
+        "耐火电缆隔离层",
+        "高温场合"
+      ],
+      "limitations": [
+        "成本高于无纺布",
+        "柔性差，绕包时易起皱",
+        "边缘可能刺伤绝缘"
+      ],
+      "cost_index": 2,
+      "sources": [
+        "STD-19666",
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "engineering"
+    },
+    {
+      "id": "SHD-SC",
+      "category": "shield",
+      "name_cn": "半导电屏蔽料（导体屏蔽+绝缘屏蔽）",
+      "name_en": "Semiconductive compound for conductor & insulation screen",
+      "grade": "可交联半导电屏蔽料",
+      "abstract": "中压电缆的必备结构：内屏蔽均化导体表面电场，外屏蔽均化绝缘表面电场，缺失会引发局部放电并击穿。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 250,
+        "temp_low": -40,
+        "flame": 1,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 1,
+        "uv": 2,
+        "flex": 2,
+        "mech": 2,
+        "abrasion": 1,
+        "rodent": 0,
+        "water": 2,
+        "magnetic": 0,
+        "tensile": 0,
+        "shield": 2,
+        "cost": 2,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "体积电阻率",
+          "v": "≤100",
+          "u": "Ω·cm",
+          "level": "standard",
+          "ref": "STD-12706-2"
+        },
+        {
+          "k": "适用电压",
+          "v": "≥6kV",
+          "u": "-",
+          "level": "standard",
+          "ref": "STD-12706-2"
+        },
+        {
+          "k": "挤出方式",
+          "v": "三层共挤（导体屏蔽/绝缘/绝缘屏蔽）",
+          "u": "-",
+          "level": "standard",
+          "ref": "STD-12706-2"
+        }
+      ],
+      "applications": [
+        "6kV 及以上中压电缆",
+        "35kV 及以下交联电缆",
+        "需要均化电场的结构"
+      ],
+      "limitations": [
+        "必须三层共挤，工艺窗口窄",
+        "界面微孔与突起是局放主要来源",
+        "不能用于低压电缆（无必要且增加成本）"
+      ],
+      "cost_index": 2,
+      "sources": [
+        "STD-12706-2",
+        "DOC-BOREALIS"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "SHD-CU-BRAID",
+      "category": "shield",
+      "name_cn": "铜丝编织屏蔽",
+      "name_en": "Copper wire braid shield",
+      "grade": "镀锡铜丝编织，覆盖率 ≥85%",
+      "abstract": "柔性最好的金属屏蔽，兼顾电磁兼容与接地，常用于变频、控制与移动场合。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 250,
+        "temp_low": -40,
+        "flame": 0,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 2,
+        "uv": 2,
+        "flex": 3,
+        "mech": 2,
+        "abrasion": 2,
+        "rodent": 0,
+        "water": 2,
+        "magnetic": 0,
+        "tensile": 2,
+        "shield": 3,
+        "cost": 4,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "编织覆盖率",
+          "v": "≥85（可定制 ≥90）",
+          "u": "%",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "屏蔽效能",
+          "v": "高频段优",
+          "u": "dB",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "弯曲性能",
+          "v": "优",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "变频器电缆",
+        "控制电缆",
+        "移动敷设屏蔽",
+        "需要高覆盖率的 EMC 场合"
+      ],
+      "limitations": [
+        "成本高、工序慢",
+        "覆盖率不足时屏蔽效能骤降",
+        "编织层易氧化，需镀锡"
+      ],
+      "cost_index": 4,
+      "sources": [
+        "DOC-TEXTBOOK",
+        "DOC-VENDOR-CN"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "engineering"
+    },
+    {
+      "id": "SHD-CU-TAPE",
+      "category": "shield",
+      "name_cn": "铜带绕包屏蔽",
+      "name_en": "Copper tape shield",
+      "grade": "软铜带，重叠绕包",
+      "abstract": "屏蔽电阻低、成本低于编织，是中压电缆金属屏蔽的常规选择，但柔性差。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 250,
+        "temp_low": -40,
+        "flame": 0,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 2,
+        "uv": 2,
+        "flex": 1,
+        "mech": 2,
+        "abrasion": 1,
+        "rodent": 0,
+        "water": 2,
+        "magnetic": 0,
+        "tensile": 1,
+        "shield": 3,
+        "cost": 2,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "短路容量",
+          "v": "高于编织",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "最小弯曲半径",
+          "v": "较大",
+          "u": "-",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "绕包搭盖率",
+          "v": "≥15%",
+          "u": "-",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "6~35kV 中压电缆金属屏蔽",
+        "固定敷设",
+        "需要低屏蔽电阻的场合"
+      ],
+      "limitations": [
+        "柔性差，不适合频繁移动",
+        "绕包不良会导致屏蔽连续性失效",
+        "单芯使用时需校核环流"
+      ],
+      "cost_index": 2,
+      "sources": [
+        "STD-12706-2",
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "SHD-AL-PET",
+      "category": "shield",
+      "name_cn": "铝塑复合带屏蔽（含排流线）",
+      "name_en": "Aluminium-PET laminated tape shield with drain wire",
+      "grade": "AL/PET 复合带 + 镀锡铜排流线",
+      "abstract": "轻、便宜、易加工，用于低压控制与弱电屏蔽；屏蔽电阻大，不能替代金属屏蔽层承担短路电流。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 150,
+        "temp_low": -40,
+        "flame": 0,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 1,
+        "uv": 2,
+        "flex": 3,
+        "mech": 1,
+        "abrasion": 0,
+        "rodent": 0,
+        "water": 2,
+        "magnetic": 0,
+        "tensile": 1,
+        "shield": 2,
+        "cost": 1,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "屏蔽电阻",
+          "v": "较高（依赖排流线）",
+          "u": "-",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "适用电压",
+          "v": "低压弱电为主",
+          "u": "-",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "屏蔽形式",
+          "v": "纵包搭接 + 排流线",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "低压控制电缆",
+        "仪表与信号电缆",
+        "成本敏感的 EMC 场合"
+      ],
+      "limitations": [
+        "不能承受短路电流",
+        "屏蔽效能低于铜带/编织",
+        "搭接不良时高频泄漏"
+      ],
+      "cost_index": 1,
+      "sources": [
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "engineering"
+    },
+    {
+      "id": "ARM-STA",
+      "category": "armor",
+      "name_cn": "双钢带铠装",
+      "name_en": "Double steel tape armour",
+      "grade": "镀锌钢带，间隙绕包",
+      "abstract": "抗压、防鼠咬的常规铠装，YJV22 的标志性结构；单芯交流回路禁用，会因涡流严重发热。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 250,
+        "temp_low": -40,
+        "flame": 0,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 2,
+        "uv": 2,
+        "flex": 1,
+        "mech": 3,
+        "abrasion": 3,
+        "rodent": 3,
+        "water": 2,
+        "magnetic": 1,
+        "tensile": 2,
+        "shield": 0,
+        "cost": 2,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "铠装层数",
+          "v": "2 层，间隙绕包",
+          "u": "-",
+          "level": "standard",
+          "ref": "STD-12706-1"
+        },
+        {
+          "k": "适用芯数",
+          "v": "三芯/多芯；单芯交流回路不适用",
+          "u": "-",
+          "level": "standard",
+          "ref": "STD-50217"
+        },
+        {
+          "k": "抗侧压",
+          "v": "强",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "直埋敷设",
+        "鼠害区域",
+        "需要抗机械外力的多芯电缆"
+      ],
+      "limitations": [
+        "单芯交流回路产生涡流损耗与过热，禁止使用",
+        "重量大",
+        "弯曲半径大",
+        "镀锌层破损后锈蚀"
+      ],
+      "cost_index": 2,
+      "sources": [
+        "STD-12706-1",
+        "STD-50217",
+        "DOC-VENDOR-CN"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "ARM-SWA",
+      "category": "armor",
+      "name_cn": "钢丝铠装",
+      "name_en": "Steel wire armour",
+      "grade": "镀锌钢丝（细钢丝/粗钢丝）",
+      "abstract": "承担轴向拉力，用于竖井、水下与大落差敷设；同样不适用于单芯交流回路。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 250,
+        "temp_low": -40,
+        "flame": 0,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 2,
+        "uv": 2,
+        "flex": 1,
+        "mech": 3,
+        "abrasion": 3,
+        "rodent": 3,
+        "water": 3,
+        "magnetic": 1,
+        "tensile": 3,
+        "shield": 0,
+        "cost": 3,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "抗拉强度",
+          "v": "显著高于钢带",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "适用场合",
+          "v": "竖井、水下、大跨度",
+          "u": "-",
+          "level": "engineering",
+          "ref": "STD-50217"
+        },
+        {
+          "k": "单芯交流",
+          "v": "不适用（涡流与感应电压）",
+          "u": "-",
+          "level": "standard",
+          "ref": "STD-50217"
+        }
+      ],
+      "applications": [
+        "竖井垂直敷设",
+        "水下与河床",
+        "需要承受拉力的长距离线路"
+      ],
+      "limitations": [
+        "重量最大",
+        "弯曲半径大",
+        "单芯交流回路禁用",
+        "端部需可靠接地与防腐"
+      ],
+      "cost_index": 3,
+      "sources": [
+        "STD-50217",
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "ARM-AL-INTERLOCK",
+      "category": "armor",
+      "name_cn": "铝合金连锁铠装",
+      "name_en": "Aluminium interlocked armour",
+      "grade": "铝合金带连锁（互锁）绕包",
+      "abstract": "非磁性铠装，可用于单芯交流回路，重量轻、抗压好，是钢带铠装的现代替代。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 250,
+        "temp_low": -40,
+        "flame": 1,
+        "halogen": 0,
+        "smoke": 2,
+        "oil": 2,
+        "uv": 2,
+        "flex": 2,
+        "mech": 3,
+        "abrasion": 2,
+        "rodent": 3,
+        "water": 3,
+        "magnetic": 0,
+        "tensile": 2,
+        "shield": 1,
+        "cost": 4,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "磁性",
+          "v": "非磁性",
+          "u": "-",
+          "level": "standard",
+          "ref": "STD-50217"
+        },
+        {
+          "k": "适用芯数",
+          "v": "单芯与多芯均可",
+          "u": "-",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "重量",
+          "v": "约为钢带铠装的 1/3",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "单芯交流电缆铠装",
+        "光伏与风电集电线路",
+        "需要轻量化的直埋与桥架"
+      ],
+      "limitations": [
+        "成本高于钢带",
+        "国内供货与规格不如钢带齐全",
+        "连锁结构对弯曲方向有要求"
+      ],
+      "cost_index": 4,
+      "sources": [
+        "STD-50217",
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "engineering"
+    },
+    {
+      "id": "SH-PVC-ST1",
+      "category": "sheath",
+      "name_cn": "聚氯乙烯护套（ST1）",
+      "name_en": "PVC sheath, ST1",
+      "grade": "ST1 普通 PVC 护套料",
+      "abstract": "YJV/VV 的默认外护套，便宜、挤出工艺成熟、耐油一般；含卤，燃烧烟大。",
+      "attrs": {
+        "temp_long": 70,
+        "temp_short": 160,
+        "temp_low": -15,
+        "flame": 1,
+        "halogen": 1,
+        "smoke": 3,
+        "oil": 2,
+        "uv": 1,
+        "flex": 2,
+        "mech": 2,
+        "abrasion": 2,
+        "rodent": 1,
+        "water": 3,
+        "magnetic": 0,
+        "tensile": 0,
+        "shield": 0,
+        "cost": 1,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "长期允许工作温度",
+          "v": "70",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-12706-1"
+        },
+        {
+          "k": "氧指数（普通型）",
+          "v": "23~28",
+          "u": "%",
+          "level": "document",
+          "ref": "STD-8815"
+        },
+        {
+          "k": "低温脆化",
+          "v": "约 -15",
+          "u": "℃",
+          "level": "document",
+          "ref": "STD-8815"
+        },
+        {
+          "k": "耐油",
+          "v": "一般（芳香烃中溶胀）",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "室内与桥架敷设",
+        "YJV/VV 系列外护套",
+        "干燥环境"
+      ],
+      "limitations": [
+        "含卤，火灾时释放氯化氢",
+        "烟密度高，不满足低烟要求",
+        "耐紫外差，户外易老化",
+        "-15℃ 以下易脆裂"
+      ],
+      "cost_index": 1,
+      "sources": [
+        "STD-12706-1",
+        "STD-8815",
+        "STD-17650"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "SH-PVC-ST2",
+      "category": "sheath",
+      "name_cn": "阻燃聚氯乙烯护套（ST2）",
+      "name_en": "Flame-retardant PVC sheath, ST2",
+      "grade": "ST2 阻燃 PVC 护套料",
+      "abstract": "在 PVC 中提高阻燃剂比例，氧指数提升到 30 以上，是 ZR-YJV 的护套；阻燃有效但仍含卤、烟大。",
+      "attrs": {
+        "temp_long": 70,
+        "temp_short": 160,
+        "temp_low": -15,
+        "flame": 2,
+        "halogen": 1,
+        "smoke": 3,
+        "oil": 2,
+        "uv": 1,
+        "flex": 2,
+        "mech": 2,
+        "abrasion": 2,
+        "rodent": 1,
+        "water": 3,
+        "magnetic": 0,
+        "tensile": 0,
+        "shield": 0,
+        "cost": 1.5,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "氧指数",
+          "v": "≥30",
+          "u": "%",
+          "level": "standard",
+          "ref": "STD-8815"
+        },
+        {
+          "k": "阻燃等级",
+          "v": "需成品成束试验判定（C 类常见）",
+          "u": "-",
+          "level": "standard",
+          "ref": "STD-18380-3"
+        },
+        {
+          "k": "长期允许工作温度",
+          "v": "70",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-12706-1"
+        }
+      ],
+      "applications": [
+        "ZR-YJV 阻燃电缆",
+        "室内成束敷设",
+        "对低烟无要求的阻燃场合"
+      ],
+      "limitations": [
+        "含卤，腐蚀性气体",
+        "烟密度高",
+        "阻燃剂增加使机械性能下降",
+        "不能宣称低烟无卤"
+      ],
+      "cost_index": 1.5,
+      "sources": [
+        "STD-8815",
+        "STD-18380-3",
+        "STD-12706-1"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "SH-PE",
+      "category": "sheath",
+      "name_cn": "聚乙烯护套",
+      "name_en": "PE sheath (ST3/ST7)",
+      "grade": "黑色耐候 PE（含炭黑）",
+      "abstract": "耐水、耐低温、耐磨，是直埋与户外的主力护套；易燃、不耐油。",
+      "attrs": {
+        "temp_long": 70,
+        "temp_short": 150,
+        "temp_low": -50,
+        "flame": 0,
+        "halogen": 0,
+        "smoke": 3,
+        "oil": 0,
+        "uv": 3,
+        "flex": 2,
+        "mech": 3,
+        "abrasion": 3,
+        "rodent": 0,
+        "water": 3,
+        "magnetic": 0,
+        "tensile": 0,
+        "shield": 0,
+        "cost": 1.5,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "长期允许工作温度",
+          "v": "70",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-12706-1"
+        },
+        {
+          "k": "低温脆化",
+          "v": "约 -50",
+          "u": "℃",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "耐环境应力开裂",
+          "v": "需选专用料",
+          "u": "-",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "阻燃",
+          "v": "易燃，需改性",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "直埋敷设",
+        "户外与潮湿环境",
+        "YJV23/YJY 系列外护套"
+      ],
+      "limitations": [
+        "易燃，不适用于阻燃要求场合",
+        "耐油差，接触油品会溶胀",
+        "无卤但燃烧烟浓",
+        "表面光滑，防鼠性差"
+      ],
+      "cost_index": 1.5,
+      "sources": [
+        "STD-12706-1",
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "SH-LSZH",
+      "category": "sheath",
+      "name_cn": "无卤低烟阻燃护套",
+      "name_en": "LSZH flame-retardant sheath",
+      "grade": "无卤低烟阻燃护套料（GB/T 32129）",
+      "abstract": "以金属氢氧化物阻燃，燃烧时透光率高、无卤酸气体，是 WDZ 系列的标志；常规牌号耐寒仅 -25℃。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 250,
+        "temp_low": -25,
+        "flame": 2,
+        "halogen": 0,
+        "smoke": 0,
+        "oil": 1,
+        "uv": 1,
+        "flex": 2,
+        "mech": 2,
+        "abrasion": 2,
+        "rodent": 0,
+        "water": 3,
+        "magnetic": 0,
+        "tensile": 0,
+        "shield": 0,
+        "cost": 4,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "氧指数",
+          "v": "≥32",
+          "u": "%",
+          "level": "standard",
+          "ref": "STD-32129"
+        },
+        {
+          "k": "卤酸气体",
+          "v": "≤5",
+          "u": "mg/g",
+          "level": "standard",
+          "ref": "STD-17650"
+        },
+        {
+          "k": "烟密度透光率",
+          "v": "≥60",
+          "u": "%",
+          "level": "standard",
+          "ref": "STD-17651"
+        },
+        {
+          "k": "低温脆化（常规牌号）",
+          "v": "约 -25",
+          "u": "℃",
+          "level": "document",
+          "ref": "STD-32129"
+        },
+        {
+          "k": "长期允许工作温度",
+          "v": "90",
+          "u": "℃",
+          "level": "standard",
+          "ref": "STD-32129"
+        }
+      ],
+      "applications": [
+        "WDZ-YJY 系列",
+        "地铁、隧道、机房、医院",
+        "人员密集场所",
+        "低烟无卤要求场合"
+      ],
+      "limitations": [
+        "常规牌号 -25℃ 即脆化，-40℃ 需专用耐寒料",
+        "成本高",
+        "耐油一般",
+        "表面易刮伤，施工需保护"
+      ],
+      "cost_index": 4,
+      "sources": [
+        "STD-32129",
+        "STD-17650",
+        "STD-17651"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "standard"
+    },
+    {
+      "id": "SH-TPU",
+      "category": "sheath",
+      "name_cn": "聚氨酯护套（PUR）",
+      "name_en": "Polyurethane sheath (PUR/TPU)",
+      "grade": "阻燃 TPU",
+      "abstract": "耐磨、耐油、耐低温、高柔性，是移动敷设与油污环境的最优解，价格最高。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 150,
+        "temp_low": -40,
+        "flame": 1,
+        "halogen": 0,
+        "smoke": 1,
+        "oil": 3,
+        "uv": 2,
+        "flex": 3,
+        "mech": 3,
+        "abrasion": 3,
+        "rodent": 1,
+        "water": 3,
+        "magnetic": 0,
+        "tensile": 0,
+        "shield": 0,
+        "cost": 5,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "耐磨性",
+          "v": "优于 PVC 5~10 倍（Taber）",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "耐油",
+          "v": "优",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "低温",
+          "v": "-40 保持柔性",
+          "u": "℃",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "阻燃",
+          "v": "需阻燃改性，燃烧有滴落",
+          "u": "-",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "拖链与机器人电缆",
+        "油污车间",
+        "移动敷设",
+        "低温户外"
+      ],
+      "limitations": [
+        "价格最高",
+        "阻燃改性后仍有滴落",
+        "长期湿热可能水解（聚酯型）",
+        "挤出工艺要求高"
+      ],
+      "cost_index": 5,
+      "sources": [
+        "DOC-TEXTBOOK",
+        "DOC-VENDOR-CN"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "engineering"
+    },
+    {
+      "id": "SH-PA",
+      "category": "sheath",
+      "name_cn": "尼龙护套（PA）",
+      "name_en": "Nylon / polyamide sheath",
+      "grade": "PA6 / PA12 薄层挤出",
+      "abstract": "极耐磨、防鼠咬、耐油，常作为附加外护层薄挤在 PVC/PE 外层，用于鼠害与磨损严重场合。",
+      "attrs": {
+        "temp_long": 90,
+        "temp_short": 150,
+        "temp_low": -40,
+        "flame": 2,
+        "halogen": 0,
+        "smoke": 1,
+        "oil": 2,
+        "uv": 3,
+        "flex": 2,
+        "mech": 3,
+        "abrasion": 3,
+        "rodent": 3,
+        "water": 3,
+        "magnetic": 0,
+        "tensile": 0,
+        "shield": 0,
+        "cost": 4,
+        "cond": 0
+      },
+      "props": [
+        {
+          "k": "耐磨性",
+          "v": "优",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "防鼠",
+          "v": "硬度高，啮齿类不易咬穿",
+          "u": "-",
+          "level": "engineering",
+          "ref": "DOC-TEXTBOOK"
+        },
+        {
+          "k": "吸湿性",
+          "v": "PA6 吸湿明显，PA12 较低",
+          "u": "-",
+          "level": "document",
+          "ref": "DOC-TEXTBOOK"
+        }
+      ],
+      "applications": [
+        "鼠害严重区域",
+        "直埋与穿管",
+        "需要高耐磨的场合"
+      ],
+      "limitations": [
+        "吸湿后尺寸与电性能变化",
+        "需专用挤出设备与粘接层",
+        "成本高",
+        "弯曲时可能开裂"
+      ],
+      "cost_index": 4,
+      "sources": [
+        "DOC-TEXTBOOK"
+      ],
+      "updated_at": "2026-11-02",
+      "evidence": "engineering"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "note": "基准场景来自题目第三节；S2/S3/S4 为补充场景，其中 S4 是已知缺陷案例（见 docs/VALIDATION.md T-05）。",
+    "updated_at": "2026-11-02"
+  },
+  "scenarios": [
+    {
+      "id": "S1",
+      "name": "室内桥架 YJV",
+      "subtitle": "题目给定基准场景",
+      "badge": "BASELINE",
+      "payload": {
+        "model": "YJV-0.6/1kV 4×35+1×16",
+        "installation": "tray",
+        "ambient": 40,
+        "lszh": true,
+        "flame": "ZC",
+        "fire_resistant": false,
+        "fire_rating": null,
+        "oil": false,
+        "uv": false,
+        "rodent": false,
+        "flexible": false,
+        "bundle": true,
+        "bundle_count": null,
+        "buried": false,
+        "wet": false,
+        "corrosive": false,
+        "emc": false,
+        "notes": "室内电缆桥架，存在成束敷设可能，对阻燃与低烟有要求"
+      },
+      "full_name": "基准：室内桥架 YJV 低压馈线"
+    },
+    {
+      "id": "S2",
+      "name": "沿海户外 防鼠",
+      "subtitle": "自行定义的开放场景",
+      "badge": "OPEN",
+      "payload": {
+        "model": "WDZ-YJY-0.6/1kV 3×120+1×70",
+        "installation": "outdoor",
+        "ambient": 45,
+        "lszh": true,
+        "flame": "ZB",
+        "fire_resistant": false,
+        "fire_rating": "B1",
+        "oil": false,
+        "uv": true,
+        "rodent": true,
+        "flexible": false,
+        "bundle": true,
+        "bundle_count": 24,
+        "buried": false,
+        "wet": true,
+        "corrosive": true,
+        "emc": false,
+        "notes": "沿海化工厂区户外桥架，盐雾腐蚀，鼠害风险，需耐紫外"
+      },
+      "full_name": "开放：沿海户外 防鼠 耐紫外"
+    },
+    {
+      "id": "S3",
+      "name": "消防回路 耐火",
+      "subtitle": "云母带复合结构",
+      "badge": "FIRE",
+      "payload": {
+        "model": "WDZN-YJY-0.6/1kV 4×25+1×16",
+        "installation": "tray",
+        "ambient": 40,
+        "lszh": true,
+        "flame": "ZB",
+        "fire_resistant": true,
+        "fire_rating": "B1",
+        "oil": false,
+        "uv": false,
+        "rodent": false,
+        "flexible": false,
+        "bundle": true,
+        "bundle_count": 12,
+        "buried": false,
+        "wet": false,
+        "corrosive": false,
+        "emc": false,
+        "notes": "消防泵供电干线，按 750℃/90min 线路完整性"
+      },
+      "full_name": "消防回路：耐火 + 低烟无卤"
+    },
+    {
+      "id": "S4",
+      "name": "严寒 -40℃",
+      "subtitle": "已知缺陷案例，请对照验证记录 T-05",
+      "badge": "EDGE",
+      "payload": {
+        "model": "WDZ-YJY-0.6/1kV 3×70+1×35",
+        "installation": "outdoor",
+        "ambient": -40,
+        "lszh": true,
+        "flame": "ZC",
+        "fire_resistant": false,
+        "fire_rating": null,
+        "oil": false,
+        "uv": true,
+        "rodent": false,
+        "flexible": false,
+        "bundle": false,
+        "bundle_count": null,
+        "buried": true,
+        "wet": true,
+        "corrosive": false,
+        "emc": false,
+        "notes": "北方严寒地区户外直埋，-40℃ 低温"
+      },
+      "full_name": "边界：-40℃ 严寒户外"
+    }
+  ]
+}

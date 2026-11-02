@@ -1,0 +1,333 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "updated_at": "2026-11-02",
+    "note": "引用精确度分为 clause（条款级）/ standard（标准级）/ document（文献或厂商文件级）。本原型绝大多数为标准级：给出标准号与要求项，条款号需以标准正文核对，不虚构页码。"
+  },
+  "standards": [
+    {
+      "id": "STD-12706-1",
+      "code": "GB/T 12706.1-2020",
+      "title": "额定电压1kV(Um=1.2kV)到35kV(Um=40.5kV)挤包绝缘电力电缆及附件 第1部分：额定电压1kV(Um=1.2kV)和3kV(Um=3.6kV)电缆",
+      "publisher": "国家市场监督管理总局、国家标准化管理委员会",
+      "scope": "0.6/1kV 与 1.8/3kV 挤包绝缘电力电缆的产品结构、材料、尺寸与试验要求",
+      "key_points": [
+        "规定绝缘标称厚度与最薄点厚度要求，最薄点一般不小于标称厚度的 90%",
+        "规定导体、绝缘、屏蔽、护套的材料与结构组合",
+        "规定例行试验（导体电阻、电压试验）与抽样试验项目"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": "2020 版替代 2008 版，引用旧版参数前需核对版本有效性"
+    },
+    {
+      "id": "STD-12706-2",
+      "code": "GB/T 12706.2-2020",
+      "title": "额定电压1kV(Um=1.2kV)到35kV(Um=40.5kV)挤包绝缘电力电缆及附件 第2部分：额定电压6kV(Um=7.2kV)到30kV(Um=36kV)电缆",
+      "publisher": "国家市场监督管理总局、国家标准化管理委员会",
+      "scope": "6kV 至 30kV 挤包绝缘电力电缆",
+      "key_points": [
+        "中压电缆须设置导体屏蔽与绝缘屏蔽（半导电层）",
+        "规定绝缘厚度随额定电压等级递增",
+        "金属屏蔽与铠装结构要求"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": ""
+    },
+    {
+      "id": "STD-3956",
+      "code": "GB/T 3956-2008",
+      "title": "电缆的导体",
+      "publisher": "国家质量监督检验检疫总局",
+      "scope": "电力电缆和电线用导体的分类、代号与电阻要求",
+      "key_points": [
+        "第1种/第2种为实心或绞合导体，第5种/第6种为软结构导体",
+        "20℃ 时铜导体直流电阻不大于 0.017241 Ω·mm²/m（IACS 100%）",
+        "20℃ 时铝导体直流电阻不大于 0.028264 Ω·mm²/m"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": "电阻值为标准规定的上限值，实际以截面与绞合结构查表"
+    },
+    {
+      "id": "STD-19666",
+      "code": "GB/T 19666-2019",
+      "title": "阻燃和耐火电线电缆或光缆通则",
+      "publisher": "国家市场监督管理总局、国家标准化管理委员会",
+      "scope": "阻燃、耐火、无卤低烟电线电缆的分类、要求与试验方法",
+      "key_points": [
+        "阻燃等级分为 A、B、C、D 四类，按成束燃烧试验的受火体积与燃烧时间区分",
+        "耐火等级分为 N、NI、NJ 等，对应不同供火温度与时间",
+        "无卤低烟要求包含卤酸气体含量、pH 值、电导率与烟密度指标"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": "阻燃等级不能仅用氧指数替代，氧指数是材料级辅助指标"
+    },
+    {
+      "id": "STD-31247",
+      "code": "GB 31247-2014",
+      "title": "电缆及光缆燃烧性能分级",
+      "publisher": "国家质量监督检验检疫总局、国家标准化管理委员会",
+      "scope": "建筑内电缆及光缆的燃烧性能分级（A、B1、B2、B3）及附加信息分级",
+      "key_points": [
+        "A 级为不燃，B1/B2/B3 为阻燃级别递减",
+        "附加信息包括燃烧滴落物 d、烟气毒性 t、腐蚀性 a",
+        "B1 级需通过成束燃烧热释放与烟密度综合判定，不能由单一材料指标推定"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": "人员密集场所与高层建筑常引用此分级，需整体送检"
+    },
+    {
+      "id": "STD-18380-3",
+      "code": "GB/T 18380.31~36-2008",
+      "title": "电缆和光缆在火焰条件下的燃烧试验 第31~36部分：垂直安装的成束电线电缆火焰垂直蔓延试验",
+      "publisher": "国家质量监督检验检疫总局",
+      "scope": "成束电缆垂直燃烧试验（对应 IEC 60332-3 系列）",
+      "key_points": [
+        "A 类试验受火电缆容量最大，B、C、D 类依次递减",
+        "判定依据为炭化高度不超过规定值",
+        "成束敷设场景应以成束试验结果为依据，单根垂直燃烧试验不足"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": ""
+    },
+    {
+      "id": "STD-18380-1",
+      "code": "GB/T 18380.11~12-2008",
+      "title": "电缆和光缆在火焰条件下的燃烧试验 第11~12部分：单根绝缘电线电缆火焰垂直蔓延试验",
+      "publisher": "国家质量监督检验检疫总局",
+      "scope": "单根电缆垂直燃烧试验（对应 IEC 60332-1）",
+      "key_points": [
+        "适用于单根敷设场景",
+        "不能替代成束燃烧试验结论"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": ""
+    },
+    {
+      "id": "STD-17650",
+      "code": "GB/T 17650.1~2-2021",
+      "title": "取自电缆或光缆的材料燃烧时释出气体的试验方法 第1~2部分：卤酸气体总量测定、pH值和电导率测定",
+      "publisher": "国家市场监督管理总局、国家标准化管理委员会",
+      "scope": "无卤性能判定（对应 IEC 60754 系列）",
+      "key_points": [
+        "卤酸气体总量要求通常不大于 5 mg/g",
+        "燃烧气体溶于水后 pH 值一般不低于 4.3",
+        "电导率一般不大于 10 μS/mm"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": "具体限值随产品标准与等级不同，需以引用标准为准"
+    },
+    {
+      "id": "STD-17651",
+      "code": "GB/T 17651.1~2-2021",
+      "title": "电缆或光缆在特定条件下燃烧的烟密度测定",
+      "publisher": "国家市场监督管理总局、国家标准化管理委员会",
+      "scope": "烟密度试验（对应 IEC 61034 系列）",
+      "key_points": [
+        "以透光率表征烟密度，无卤低烟产品通常要求透光率不小于 60%",
+        "试验在专用烟密度箱内进行"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": ""
+    },
+    {
+      "id": "STD-19216",
+      "code": "GB/T 19216.21-2003",
+      "title": "在火焰条件下电缆或光缆的线路完整性试验 第21部分：试验步骤和要求 额定电压0.6/1.0kV及以下电缆",
+      "publisher": "国家质量监督检验检疫总局",
+      "scope": "耐火电缆线路完整性试验（对应 IEC 60331-21）",
+      "key_points": [
+        "供火温度 750℃，供火时间 90 min，期间施加额定电压并监测熔断",
+        "更高要求的场合需引用 950℃ 或带冲击振动喷水的试验条件"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": ""
+    },
+    {
+      "id": "STD-50217",
+      "code": "GB 50217-2018",
+      "title": "电力工程电缆设计标准",
+      "publisher": "中华人民共和国住房和城乡建设部",
+      "scope": "电力电缆选型、敷设方式、载流量与环境条件的设计规定",
+      "key_points": [
+        "按敷设方式、环境温度、成束根数修正载流量",
+        "直埋、穿管、桥架、竖井等敷设方式的机械保护要求",
+        "铝芯电缆的使用范围与最小截面限制"
+      ],
+      "url": "https://www.mohurd.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": "设计标准，非产品标准；本原型用于敷设与选型约束"
+    },
+    {
+      "id": "STD-2951",
+      "code": "GB/T 2951.11~12-2008",
+      "title": "电缆和光缆绝缘和护套材料通用试验方法 第11~12部分：通用试验方法 厚度和外形尺寸测量、机械性能试验",
+      "publisher": "国家质量监督检验检疫总局",
+      "scope": "绝缘与护套材料的机械物理性能试验方法",
+      "key_points": [
+        "老化前后抗张强度与断裂伸长率测定",
+        "厚度测量方法",
+        "低温冲击/弯曲试验方法"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": ""
+    },
+    {
+      "id": "STD-32129",
+      "code": "GB/T 32129-2015",
+      "title": "电线电缆用无卤低烟阻燃电缆料",
+      "publisher": "国家质量监督检验检疫总局、国家标准化管理委员会",
+      "scope": "无卤低烟阻燃绝缘料与护套料的分类和性能要求",
+      "key_points": [
+        "规定无卤低烟电缆料的氧指数、卤含量、烟密度、机械性能",
+        "按用途区分绝缘料与护套料、不同耐温等级"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": "材料级标准，是判断护套/绝缘牌号是否合规的直接依据"
+    },
+    {
+      "id": "STD-8815",
+      "code": "GB/T 8815-2008",
+      "title": "电线电缆用软聚氯乙烯塑料",
+      "publisher": "国家质量监督检验检疫总局",
+      "scope": "电线电缆用软 PVC 绝缘料与护套料",
+      "key_points": [
+        "按用途与耐温等级分类",
+        "规定机械性能、体积电阻率、耐油与耐低温性能"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": ""
+    },
+    {
+      "id": "STD-5013",
+      "code": "GB/T 5013-2008",
+      "title": "额定电压450/750V及以下橡皮绝缘电缆",
+      "publisher": "国家质量监督检验检疫总局",
+      "scope": "橡皮绝缘软电缆与固定敷设电缆",
+      "key_points": [
+        "乙丙橡胶与硅橡胶绝缘的型号、结构与性能",
+        "适用于移动敷设、耐热与耐寒场合"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": ""
+    },
+    {
+      "id": "STD-5023",
+      "code": "GB/T 5023-2008",
+      "title": "额定电压450/750V及以下聚氯乙烯绝缘电缆",
+      "publisher": "国家质量监督检验检疫总局",
+      "scope": "PVC 绝缘布电线与软电缆",
+      "key_points": [
+        "BV、BVR、RVV 等型号的结构与性能",
+        "长期允许工作温度 70℃"
+      ],
+      "url": "https://openstd.samr.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": ""
+    },
+    {
+      "id": "STD-50016",
+      "code": "GB 50016-2014（2018年版）",
+      "title": "建筑设计防火规范",
+      "publisher": "中华人民共和国住房和城乡建设部",
+      "scope": "建筑内消防用电设备供电线路、人员密集场所电缆选型",
+      "key_points": [
+        "消防设备供电干线宜采用耐火电缆",
+        "人员密集场所的电缆燃烧性能有明确分级要求"
+      ],
+      "url": "https://www.mohurd.gov.cn/",
+      "precision": "standard",
+      "accessed_at": "2026-11-02",
+      "note": ""
+    },
+    {
+      "id": "DOC-BOREALIS",
+      "code": "Borealis Borlink",
+      "title": "Borlink 交联聚乙烯电缆料产品手册（中低压与高压系列）",
+      "publisher": "Borealis AG",
+      "scope": "XLPE 绝缘料牌号、加工窗口与电气性能",
+      "key_points": [
+        "不同牌号对应不同电压等级与挤出工艺窗口",
+        "洁净度等级影响中高压电缆局放性能"
+      ],
+      "url": "https://www.borealisgroup.com/",
+      "precision": "document",
+      "accessed_at": "2026-11-02",
+      "note": "厂商公开资料，牌号级参数需向供应商索取最新 TDS"
+    },
+    {
+      "id": "DOC-DOW",
+      "code": "Dow Endurance",
+      "title": "Dow Endurance 中压电缆绝缘料技术资料",
+      "publisher": "Dow Inc.",
+      "scope": "中压 XLPE/树阻绝缘料性能与工艺",
+      "key_points": [
+        "耐水树牌号适用于潮湿与地下敷设",
+        "交联工艺窗口与焦烧风险"
+      ],
+      "url": "https://www.dow.com/",
+      "precision": "document",
+      "accessed_at": "2026-11-02",
+      "note": ""
+    },
+    {
+      "id": "DOC-VENDOR-CN",
+      "code": "CN-CABLE-VENDOR",
+      "title": "国内主流电缆厂（远东、上上、宝胜、亨通）公开产品样本",
+      "publisher": "各厂商官网产品页",
+      "scope": "YJV/WDZ-YJY/YJV22 等型号的结构、载流量与应用说明",
+      "key_points": [
+        "样本给出型号对应的导体、绝缘、铠装、护套组合",
+        "载流量表基于特定敷设条件，需按 GB 50217 修正"
+      ],
+      "url": "https://www.fegroup.com.cn/",
+      "precision": "document",
+      "accessed_at": "2026-11-02",
+      "note": "厂商样本为工程参考，不替代标准；不同厂同型号结构可能不同"
+    },
+    {
+      "id": "DOC-TEXTBOOK",
+      "code": "CABLE-HANDBOOK",
+      "title": "《电线电缆手册》（第3版）材料与结构卷",
+      "publisher": "机械工业出版社",
+      "scope": "电缆材料体系、结构设计、性能对比",
+      "key_points": [
+        "各层材料的功能定位与选材原则",
+        "材料性能对比与失效模式"
+      ],
+      "url": "https://www.cmpbook.com/",
+      "precision": "document",
+      "accessed_at": "2026-11-02",
+      "note": "教材类来源，用于工程经验判断，不作为合规依据"
+    }
+  ]
+}

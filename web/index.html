@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CableMind｜AI 电缆材料选型智能体</title>
+<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="21" fill="none" stroke="#C07A4E" stroke-width="1.2" opacity=".55"/>
+      <circle cx="24" cy="24" r="15.5" fill="none" stroke="#C07A4E" stroke-width="1.2" opacity=".8"/>
+      <circle cx="24" cy="24" r="10" fill="none" stroke="#E3B58C" stroke-width="1.4"/>
+      <circle cx="24" cy="24" r="5.2" fill="#C07A4E"/>
+      <circle cx="24" cy="24" r="2.1" fill="#131A21"/>
+      <path d="M24 3v6M24 39v6M3 24h6M39 24h6" stroke="#E3B58C" stroke-width="1.2"/>
+    </svg>
+    <div class="brand-text">
+      <strong>CableMind</strong>
+      <span>AI 电缆材料选型智能体</span>
+    </div>
+  </div>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-view="select">选型工作台</button>
+    <button class="tab" data-view="materials">材料库</button>
+    <button class="tab" data-view="evidence">证据链</button>
+    <button class="tab" data-view="validation">验证记录</button>
+  </nav>
+
+  <div class="topmeta">
+    <span class="dot"></span>
+    <span id="health">加载中</span>
+  </div>
+</header>
+
+<main>
+  <!-- ============================ 选型工作台 ============================ -->
+  <section class="view active" id="view-select">
+    <aside class="form-panel">
+      <div class="panel-title">
+        <span class="eyebrow">INPUT</span>
+        <h2>工况与需求</h2>
+      </div>
+
+      <div class="scenario-chips" id="scenarioChips"></div>
+
+      <label class="field">
+        <span>电缆型号</span>
+        <input id="f-model" type="text" value="YJV-0.6/1kV 4×35+1×16" spellcheck="false" />
+        <em>支持 YJV / YJV22 / WDZ-YJY / WDZN-YJY / YJLV 等 GB/T 12706 习惯写法</em>
+      </label>
+
+      <div class="field-row">
+        <label class="field">
+          <span>敷设方式</span>
+          <select id="f-installation">
+            <option value="tray">室内电缆桥架</option>
+            <option value="duct">穿管敷设</option>
+            <option value="buried">直埋敷设</option>
+            <option value="outdoor">户外架空/明敷</option>
+            <option value="shaft">竖井垂直敷设</option>
+            <option value="mobile">移动敷设</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>环境温度 ℃</span>
+          <input id="f-ambient" type="number" value="40" step="1" />
+        </label>
+      </div>
+
+      <div class="field-row">
+        <label class="field">
+          <span>阻燃等级</span>
+          <select id="f-flame">
+            <option value="none">不要求</option>
+            <option value="ZC" selected>ZC（C 类）</option>
+            <option value="ZB">ZB（B 类）</option>
+            <option value="ZA">ZA（A 类）</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>GB 31247 分级</span>
+          <select id="f-rating">
+            <option value="">未指定</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+            <option value="A">A</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="field">
+        <span>性能要求</span>
+        <div class="checks" id="f-checks">
+          <label><input type="checkbox" data-key="lszh" checked /><i></i>低烟无卤</label>
+          <label><input type="checkbox" data-key="fire_resistant" /><i></i>耐火</label>
+          <label><input type="checkbox" data-key="bundle" checked /><i></i>成束敷设</label>
+          <label><input type="checkbox" data-key="uv" /><i></i>耐紫外</label>
+          <label><input type="checkbox" data-key="rodent" /><i></i>防鼠</label>
+          <label><input type="checkbox" data-key="oil" /><i></i>耐油</label>
+          <label><input type="checkbox" data-key="flexible" /><i></i>柔性/移动</label>
+          <label><input type="checkbox" data-key="buried" /><i></i>直埋</label>
+          <label><input type="checkbox" data-key="wet" /><i></i>潮湿/阻水</label>
+          <label><input type="checkbox" data-key="corrosive" /><i></i>腐蚀环境</label>
+          <label><input type="checkbox" data-key="emc" /><i></i>电磁兼容</label>
+        </div>
+      </div>
+
+      <label class="field">
+        <span>成束根数（可选，用于校核阻燃等级）</span>
+        <input id="f-bundle" type="number" placeholder="未知则留空，将触发追问" />
+      </label>
+
+      <button class="run" id="runBtn">
+        <span>运行选型</span>
+        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+      </button>
+
+      <p class="hint">不输入密钥即可运行：叙述层使用确定性模板，无网络依赖。</p>
+    </aside>
+
+    <div class="result-panel" id="resultPanel">
+      <div class="empty" id="emptyState">
+        <div class="empty-mark">
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <circle cx="60" cy="60" r="52" fill="none" stroke="#D8CFBE" stroke-width="1"/>
+            <circle cx="60" cy="60" r="38" fill="none" stroke="#D8CFBE" stroke-width="1"/>
+            <circle cx="60" cy="60" r="24" fill="none" stroke="#C07A4E" stroke-width="1.2" stroke-dasharray="3 3"/>
+            <circle cx="60" cy="60" r="10" fill="#EFE7D8"/>
+            <path d="M60 4v14M60 102v14M4 60h14M102 60h14" stroke="#D8CFBE" stroke-width="1"/>
+          </svg>
+        </div>
+        <h3>选择左侧工况，或直接运行基准场景</h3>
+        <p>系统会输出六层结构的候选、推荐、取舍与证据链，并标注哪些结论属于标准规定、哪些属于工程判断。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 材料库 ============================ -->
+  <section class="view" id="view-materials">
+    <div class="page-head">
+      <div>
+        <span class="eyebrow">DATASET</span>
+        <h2>材料数据集</h2>
+        <p>每条记录含类别、牌号、物理性能、适用场景、限制条件、来源与更新时间。性能值为典型值，来源精确度标注在记录内。</p>
+      </div>
+      <div class="filterbar">
+        <input id="matSearch" type="search" placeholder="搜索材料、牌号或场景…" />
+        <div class="seg" id="catFilter"></div>
+      </div>
+    </div>
+    <div id="matTable" class="table-wrap"></div>
+  </section>
+
+  <!-- ============================ 证据链 ============================ -->
+  <section class="view" id="view-evidence">
+    <div class="page-head">
+      <div>
+        <span class="eyebrow">EVIDENCE</span>
+        <h2>证据链与引用分级</h2>
+        <p>每条推荐都回链到标准或文献。系统区分「标准规定」「厂商/教材文件」「工程经验」「待验证假设」，并明确当前做不到条款级定位。</p>
+      </div>
+    </div>
+    <div class="evidence-grid">
+      <div class="card rules">
+        <h3>证据分级规则</h3>
+        <div class="rule-row"><b class="lv std">标准</b><p>国标/行标的强制或推荐要求，可作为合规依据。本原型记录到「标准号 + 要求项」，<b>未逐条标注条款号与页码</b>。</p></div>
+        <div class="rule-row"><b class="lv doc">文件</b><p>厂商样本、教材、手册。用于工程判断，不替代标准；同型号不同厂可能结构不同。</p></div>
+        <div class="rule-row"><b class="lv eng">经验</b><p>工程惯例与序数评分（0-3），例如「4 芯 35mm² 低压电缆以铜导体为主」。可被质疑，也可被实测数据替换。</p></div>
+        <div class="rule-row"><b class="lv asm">假设</b><p>原型内的简化，例如「中压/低烟场景按 90℃ 耐温等级处理」。写在结果页的假设区，不隐藏。</p></div>
+        <h3 class="mt">明确不做的事</h3>
+        <ul class="plain">
+          <li>不虚构条款号：引用精确度不足时如实标注为「标准级」。</li>
+          <li>不用材料氧指数推定成品阻燃等级。</li>
+          <li>不计算载流量、电压降与短路热稳定。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>引用清单 <span class="count" id="citeCount"></span></h3>
+        <div id="citeList" class="cite-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 验证记录 ============================ -->
+  <section class="view" id="view-validation">
+    <div class="page-head">
+      <div>
+        <span class="eyebrow">VALIDATION</span>
+        <h2>验证记录</h2>
+        <p>5 条测试输入，记录预期、实际输出与人工判断，其中 1 条为已知失败案例。失败原因与改进方向写在记录里，不做美化。</p>
+      </div>
+      <div class="scoreline" id="valScore"></div>
+    </div>
+    <div id="valList" class="val-list"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>CableMind v1.0 · 原型系统，非生产级部署</span>
+  <span>数据版本 2026-11-02 · 29 条材料 / 21 条来源</span>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
