@@ -27,6 +27,24 @@ cp .env.example .env    # 填入 LLM_API_KEY / LLM_BASE_URL / LLM_MODEL
 
 任何调用异常都会自动回退到离线模板，并在返回体的 `narrative.mode` 中标注 `fallback`。
 
+### 命令行用法（不启 Web）
+
+同一条引擎链路也挂在 CLI 上，输出为终端表格，便于脚本化调用与评审时快速验证：
+
+```bash
+python -m app.cli --list                                        # 列出场景预设
+python -m app.cli --scenario S2                                 # 跑预设场景
+python -m app.cli --model "YJV22-8.7/15kV 3×240" \
+    --installation buried --wet --corrosive --rodent            # 自由组合工况
+python -m app.cli --json                                        # 机器可读输出
+```
+
+CLI 只负责呈现，所有判断仍来自 `app/engine.py`，不产生第二套逻辑。
+
+![CLI 基准场景](screenshots/cli-01.png)
+
+![CLI 沿海场景](screenshots/cli-02.png)
+
 ---
 
 ## 三个演示案例
@@ -92,6 +110,7 @@ app/
   llm.py         叙述层：LLM 调用 + 离线模板 + 异常回退
   models.py      Pydantic 请求/响应模型
   main.py        FastAPI 路由与静态资源
+  cli.py         命令行入口（rich 渲染，逻辑复用 engine）
 data/
   materials.json 29 条材料记录（7 个类别，含物理性能、限制、来源、更新时间）
   standards.json 21 条来源（18 条国家/行业标准 + 3 条厂商/教材文件）
@@ -102,7 +121,11 @@ tests/           20 个测试：引擎约束、引用完整性、API 冒烟、�
 docs/
   DESIGN.md      设计说明（为什么这样选型、如何降低幻觉）
   VALIDATION.md  验证记录（5 条，含 1 条失败）
-screenshots/     运行截图
+scripts/
+  run.sh         一键启动
+  screenshot.py  Web 截图（Playwright）
+  cli_shot.py    CLI 截图：录真实输出 → 导出 HTML → 截图
+screenshots/     运行截图（Web 4 张 + CLI 2 张）
 ```
 
 ---
